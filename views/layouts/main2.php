@@ -62,8 +62,8 @@ AppAsset::register($this);
                         <li><a href="">Galeria <span class="caret"></span></a>
                             <ul>
                                 <li style="font-size: small"><?= Html::a('Catalogo',Url::to(['/site/catalogo'])) ?></li>
-                                <li style="font-size: small"><a href="https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0" style="font-size:small">Fotos</a></li>
-                                <li style="font-size: small"><a href="https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ" style="font-size:small">Videos</a></li>
+                                <li style="font-size: small"><?= Html::a('Fotos','https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0',['class'=>'youtube','target'=>'_blanck']) ?></li>
+                                <li style="font-size: small"><?= Html::a('Youtube','https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ',['class'=>'youtube','target'=>'_blanck'])?></li>
                             </ul>
                         </li>
                         <li><?= Html::a('Noticias',['site/noticias']) ?></li>

@@ -39,17 +39,15 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
-<div class="bgl col-lg-12 col-sm-12 col-md-12">
+<div class="bgl2 col-lg-12 col-sm-12 col-md-12">
     <div class="container col-lg-12 col-sm-12 col-md-12">
         <div id="home" class="header wow bounceInDown" data - wow - delay="0.4s">
             <div class="top-header">
                 <div class=" col-sm-4 logo wow bounceInDown" data - wow - delay="0.4s">
-                    <a href="#"> <?= Html::img(\yii\helpers\Url::base() . '/theme/images/logo4.png', ['alt' => 'logo']) ?> </a>
+                    <a href="#"><?= Html::img(\yii\helpers\Url::base() . '/theme/images/logo4.png', ['alt' => 'logo']) ?> </a>
                 </div>
                  <nav class="top-nav wow bounceInDown" data - wow - delay="0.4s">
-                    <span class="menu"> </span>
                     <ul class="top-nav">
                         <li class="active" ><?= Html::a('Inicio',['index']) ?></li>
                         <li><a href="#">Quienes somos <span class="caret"></span></a>
@@ -62,15 +60,45 @@ AppAsset::register($this);
                         <li><a href="">Galeria <span class="caret"></span></a>
                             <ul>
                                 <li style="font-size: small"><?= Html::a('Catalogo',Url::to(['/site/catalogo'])) ?></li>
-                                <li style="font-size: small"><?= Html::a('Fotos',['https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0']) ?></li>
-                                <li style="font-size: small"><a href="https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ" style="font-size:small">Videos</a></li>
+                                <li style="font-size: small"><?= Html::a('Fotos','https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0',['class'=>'youtube','target'=>'_blanck']) ?></li>
+                                <li style="font-size: small"><?= Html::a('Youtube','https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ',['class'=>'youtube','target'=>'_blanck'])?></li>
                             </ul>
                         </li>
                         <li><?= Html::a('Noticias',['site/noticias']) ?></li>
                         <li><?= Html::a('Contactenos',Url::to(['/site/contact'])) ?></a></li>
                     </ul>
                 </nav>
-                <div class="clearfix"></div>
+                <div id="fotos" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#fotos" data-slide-to="0" class="active"></li>
+                    <li data-target="#fotos" data-slide-to="1"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/road4.jpg') ?>
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                    <div class="item">
+                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/p1.jpg') ?>
+                        <div class="carousel-caption">
+
+                        </div>
+                    </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#fotos" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#fotos" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div> <!-- Carousel -->
+                            <div class="clearfix"></div>
+            </div>
             </div>
         </div>
     </div>
@@ -136,11 +164,13 @@ AppAsset::register($this);
                 href="#">GreenSoftw</a></p>
     </div>
 </div>
-<?php $this->registerJsFile('@web/js/bg.js',[
+<?php /*$this->registerJsFile('@web/js/bg.js',[
     'depends'=>[\yii\web\JqueryAsset::className()],
     'position'=>\yii\web\View::POS_END
-]) ?>
+]) */?>
 <?php $this->endBody() ?>
+
+
 </body>
 </html>
 <?php $this->endPage() ?>
