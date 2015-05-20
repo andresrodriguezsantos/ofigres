@@ -47,7 +47,6 @@ use yii\helpers\Url;
     </div>
 </div>
 <div class="clearfix"> </div>
-
 <div class="mid-grids">
     <div class="container">
         <div class="mid-grid">

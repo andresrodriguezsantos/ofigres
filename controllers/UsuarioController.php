@@ -42,13 +42,18 @@ class UsuarioController extends \yii\web\Controller
         if(Yii::$app->request->post()){
             $usuario->load(\Yii::$app->request->post());
             $usuario->password = Yii::$app->security->generatePasswordHash($usuario->password);
-            $usuario->save();
-            Yii::$app->authManager->assign(
-                Yii::$app->authManager->getRole(Yii::$app->request->post('rol')),
-                $usuario->id
-            );
-            Yii::$app->session->setFlash('success','Usuario creado correctamente');
-            $usuario = new Usuario();
+            $user = Usuario::findOne(['email'=>Yii::$app->request->post('email')]);
+            if($user!=null){
+                $usuario->save();
+                Yii::$app->authManager->assign(
+                    Yii::$app->authManager->getRole(Yii::$app->request->post('rol')),
+                    $usuario->id
+                );
+                Yii::$app->session->setFlash('success','Usuario creado correctamente');
+                $usuario = new Usuario();
+            }else{
+                Yii::$app->session->setFlash('danger','El email ya se encuentra registrado');
+            }
         }
         /** @var Role $roles */
         $roles = Yii::$app->authManager->getRoles();
@@ -74,6 +79,7 @@ class UsuarioController extends \yii\web\Controller
         if($usuario!=null){
             if(Yii::$app->request->post()){
                 $usuario->load(Yii::$app->request->post());
+                $usuario->password = Yii::$app->security->generatePasswordHash($usuario->password);
                 if($usuario->save()){
                     Yii::$app->session->setFlash('success','Datos modificados corretamente');
                     return $this->redirect(['admin']);
