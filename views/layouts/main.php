@@ -39,7 +39,6 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
 <div class="bgl2 col-lg-12 col-sm-12 col-md-12">
     <div class="container col-lg-12 col-sm-12 col-md-12">
