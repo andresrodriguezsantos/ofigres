@@ -78,7 +78,7 @@ AppAsset::register($this);
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/road4.jpg') ?>
+                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/banner3.jpg') ?>
                         <div class="carousel-caption">
 
                         </div>
