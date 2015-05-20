@@ -46,7 +46,6 @@ AppAsset::register($this);
         <div id="home" class="header wow bounceInDown" data - wow - delay="0.4s">
             <div class="top-header">
                 <div class=" col-sm-4 logo wow bounceInDown" data - wow - delay="0.4s">
-
                     <a href="#"><?= Html::img(\yii\helpers\Url::base() . '/theme/images/logo4.png', ['alt' => 'logo']) ?> </a>
                 </div>
                  <nav class="top-nav wow bounceInDown" data - wow - delay="0.4s">

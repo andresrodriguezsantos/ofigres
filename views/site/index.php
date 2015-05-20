@@ -12,7 +12,6 @@ use yii\helpers\Url;
         <h2 class="pull-left" style="color:#0B479D">INVERSIONES OFIR DE COLOMBIA</h2>
     </div>
 </div>
-
 <div class="container">
     <div class="welcome-note">
         <div class="welcome-note-grids">
