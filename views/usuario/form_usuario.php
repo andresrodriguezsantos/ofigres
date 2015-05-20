@@ -13,7 +13,9 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="panel-body">
             <div class="col-md-6">
+                <?php $user->email = ""; $user->password=""; ?>
                 <?php $form = ActiveForm::begin(); ?>
+                <?php /** @var \app\models\Usuario $user */?>
                 <?= $form->field($user, 'nombres') ?>
                 <?= $form->field($user, 'apellidos') ?>
                 <?= $form->field($user, 'email') ?>
@@ -48,6 +50,7 @@ use yii\widgets\ActiveForm;
                                             'eliminar','id'=>$l->id
                                         ]
                                     ]); ?>
+                                    <?= Html::a('editar',['editar','id'=>$l->id],['class'=>'btn btn-info btn-xs']) ?>
                                 </td>
                             </tr>
                         <?php } ?>
