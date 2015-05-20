@@ -44,71 +44,75 @@ AppAsset::register($this);
     <div class="container col-lg-12 col-sm-12 col-md-12">
         <div id="home" class="header wow bounceInDown" data - wow - delay="0.4s">
             <div class="top-header">
-                <div class=" col-sm-4 logo wow bounceInDown" data - wow - delay="0.4s">
+                <div class="logo wow bounceInDown animated" data - wow - delay="0.4s">
                     <a href="#"><?= Html::img(\yii\helpers\Url::base() . '/theme/images/logo4.png', ['alt' => 'logo']) ?> </a>
                 </div>
-                 <nav class="top-nav wow bounceInDown" data - wow - delay="0.4s">
+                <nav class="top-nav wow bounceInDown" data - wow - delay="0.4s">
                     <ul class="top-nav">
-                        <li class="active" ><?= Html::a('Inicio',['index']) ?></li>
+                        <li class="active"><?= Html::a('Inicio', ['index']) ?></li>
                         <li><a href="#">Quienes somos <span class="caret"></span></a>
                             <ul>
-                                <li style="font-size: small"><?= Html::a('Acerca de',Url::to(['/site/mision'])) ?></li>
-                                <li style="font-size: small"><?= Html::a('Objeto social',Url::to(['/site/objetosocial'])) ?></li>
-                                <li style="font-size: small"><?= Html::a('Pol. de Calidad',Url::to(['/site/politicas'])) ?></a></li>
+                                <li style="font-size: small"><?= Html::a('Acerca de', Url::to(['/site/mision'])) ?></li>
+                                <li style="font-size: small"><?= Html::a('Objeto social', Url::to(['/site/objetosocial'])) ?></li>
+                                <li style="font-size: small"><?= Html::a('Pol. de Calidad', Url::to(['/site/politicas'])) ?></a></li>
                             </ul>
                         </li>
                         <li><a href="">Galeria <span class="caret"></span></a>
                             <ul>
-                                <li style="font-size: small"><?= Html::a('Catalogo',Url::to(['/site/catalogo'])) ?></li>
-                                <li style="font-size: small"><?= Html::a('Fotos','https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0',['class'=>'youtube','target'=>'_blanck']) ?></li>
-                                <li style="font-size: small"><?= Html::a('Youtube','https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ',['class'=>'youtube','target'=>'_blanck'])?></li>
+                                <li style="font-size: small"><?= Html::a('Catalogo', Url::to(['/site/catalogo'])) ?></li>
+                                <li style="font-size: small"><?= Html::a('Fotos', 'https://www.dropbox.com/sh/yu74pvzr3i1eh6h/AAB97Ol5Y-or4yHVZKqYGNMra?dl=0', ['class' => 'youtube', 'target' => '_blanck']) ?></li>
+                                <li style="font-size: small"><?= Html::a('Youtube', 'https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ', ['class' => 'youtube', 'target' => '_blanck']) ?></li>
                             </ul>
                         </li>
-                        <li><?= Html::a('Noticias',['site/noticias']) ?></li>
-                        <li><?= Html::a('Contactenos',Url::to(['/site/contact'])) ?></a></li>
+                        <li><?= Html::a('Noticias', ['site/noticias']) ?></li>
+                        <li><?= Html::a('Contactenos', Url::to(['/site/contact'])) ?></a></li>
                     </ul>
                 </nav>
+                <div class="clearfix"></div>
                 <div id="fotos" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#fotos" data-slide-to="0" class="active"></li>
-                    <li data-target="#fotos" data-slide-to="1"></li>
-                </ol>
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#fotos" data-slide-to="0" class="active"></li>
+                        <li data-target="#fotos" data-slide-to="1"></li>
+                    </ol>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/road4.jpg') ?>
-                        <div class="carousel-caption">
-
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <?= Html::img(\yii\helpers\Url::base() . '/theme/images/road4.jpg') ?>
+                            <div class="carousel-caption">
+                                <h2 style="color: #ffffff; text-transform: uppercase">ASFALTO LISTO PARA USAR</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                    <?=Html::img(\yii\helpers\Url::base() . '/theme/images/p1.jpg') ?>
-                        <div class="carousel-caption">
-
+                        <div class="item">
+                            <?= Html::img(\yii\helpers\Url::base() . '/theme/images/p1.jpg') ?>
+                            <div class="carousel-caption">
+                                <h2 style="color: #ffffff; text-transform: uppercase">ASFALTO LISTO PARA USAR</h2>
+                            </div>
                         </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#fotos" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#fotos" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
                     </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#fotos" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#fotos" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div> <!-- Carousel -->
-                            <div class="clearfix"></div>
-            </div>
+                    <!-- Carousel -->
+                    <div class="clearfix"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="banner text-right">
+   <!-- <div class="banner text-right">
         <div class="container">
             <br/><br/><br/><br/><br/><br/><br/><br/>
-            <h2 style="color: #ffffff; text-transform: uppercase">ASFALTO LISTO PARA USAR</h2>
+
+
+
             <div class="clearfix"></div>
         </div>
-    </div>
+    </div>-->
 </div>
 <div class="container">
     <?php if (($msm = Yii::$app->session->getAllFlashes()) !== null): ?>
@@ -132,18 +136,18 @@ AppAsset::register($this);
             <div class="col-md-2 footer-grid ftr-sec wow fadeInLeft" data-wow-delay="0.4s">
                 <h3>Navegacion</h3>
                 <ul>
-                    <li><?= Html::a('Inicio',['index']) ?></li>
-                    <li><?= Html::a('Noticias',['site/noticias']) ?></li>
-                    <li><?= Html::a('Contactenos',Url::to(['/site/contact'])) ?></a></li>
-                    <li><?= Html::a('Intranet',['/site/login']) ?></li>
+                    <li><?= Html::a('Inicio', ['index']) ?></li>
+                    <li><?= Html::a('Noticias', ['site/noticias']) ?></li>
+                    <li><?= Html::a('Contactenos', Url::to(['/site/contact'])) ?></a></li>
+                    <li><?= Html::a('Intranet', ['/site/login']) ?></li>
                 </ul>
             </div>
 
             <div class="col-md-2 footer-grid ftr-sec wow fadeInRight" data-wow-delay="0.4s">
                 <h3>Siguenos</h3>
                 <ul class="social-icons">
-                    <li><?= Html::a('Facebook','https://facebook.com/ofigres',['class'=>'facebook','target'=>'_blanck']) ?></li>
-                    <li><?= Html::a('Youtube','https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ',['class'=>'youtube','target'=>'_blanck']) ?></li>
+                    <li><?= Html::a('Facebook', 'https://facebook.com/ofigres', ['class' => 'facebook', 'target' => '_blanck']) ?></li>
+                    <li><?= Html::a('Youtube', 'https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ', ['class' => 'youtube', 'target' => '_blanck']) ?></li>
                 </ul>
             </div>
             <div class="col-md-5 footer-grid ftr-sec ftr wow fadeInRight" data-wow-delay="0.4s">
@@ -156,7 +160,7 @@ AppAsset::register($this);
                 </ul>
             </div>
             <div class="col-md-3 footer-grid ftr-sec ftr wow fadeInRight" data-wow-delay="0.4s">
-                <?= Html::img(\yii\helpers\Url::base() . '/theme/images/logoofigres.png', ['class'=>'img-responsive']) ?>
+                <?= Html::img(\yii\helpers\Url::base() . '/theme/images/logoofigres.png', ['class' => 'img-responsive']) ?>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -167,7 +171,7 @@ AppAsset::register($this);
 <?php /*$this->registerJsFile('@web/js/bg.js',[
     'depends'=>[\yii\web\JqueryAsset::className()],
     'position'=>\yii\web\View::POS_END
-]) */?>
+]) */ ?>
 <?php $this->endBody() ?>
 
 
