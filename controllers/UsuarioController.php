@@ -39,11 +39,14 @@ class UsuarioController extends \yii\web\Controller
     {
         $usuario = new Usuario();
         $lista = Usuario::find()->all();
+        /** @var Role $roles */
+        $roles = Yii::$app->authManager->getRoles();
+        $data = ArrayHelper::map($roles,'name','name');
         if(Yii::$app->request->post()){
             $usuario->load(\Yii::$app->request->post());
             $usuario->password = Yii::$app->security->generatePasswordHash($usuario->password);
             $user = Usuario::findOne(['email'=>Yii::$app->request->post('email')]);
-            if($user!=null){
+            if($user==null){
                 $usuario->save();
                 Yii::$app->authManager->assign(
                     Yii::$app->authManager->getRole(Yii::$app->request->post('rol')),
@@ -55,9 +58,6 @@ class UsuarioController extends \yii\web\Controller
                 Yii::$app->session->setFlash('danger','El email ya se encuentra registrado');
             }
         }
-        /** @var Role $roles */
-        $roles = Yii::$app->authManager->getRoles();
-        $data = ArrayHelper::map($roles,'name','name');
         return $this->render('form_usuario',[
             'user'=>$usuario,
             'lista'=>$lista,

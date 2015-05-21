@@ -13,8 +13,10 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="panel-body">
             <div class="col-md-12">
-                <?php $form = ActiveForm::begin(); ?>
                 <?php /** @var \app\models\Usuario $user */?>
+                <?php $user->email ="";$user->password = "" ?>
+                <?php $form = ActiveForm::begin(); ?>
+
                 <div class="col-md-6">
                     <?= $form->field($user, 'nombres') ?>
                     <?= $form->field($user, 'apellidos') ?>
