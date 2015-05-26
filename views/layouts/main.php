@@ -117,7 +117,7 @@ AppAsset::register($this);
             <div class="col-md-2 footer-grid ftr-sec wow fadeInRight" data-wow-delay="0.4s">
                 <h3>Siguenos</h3>
                 <ul class="social-icons">
-                    <li><?= Html::a('Facebook', 'https://facebook.com/ofigres', ['class' => 'facebook', 'target' => '_blanck']) ?></li>
+                    <li><?= Html::a('Facebook', 'https://www.facebook.com/TecnologiadeAsfaltoEZStreet', ['class' => 'facebook', 'target' => '_blanck']) ?></li>
                     <li><?= Html::a('Youtube', 'https://www.youtube.com/channel/UCV-V0f5m4otn3g3bal1WMqQ', ['class' => 'youtube', 'target' => '_blanck']) ?></li>
                 </ul>
             </div>
