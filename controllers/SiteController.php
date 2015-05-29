@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Noticias;
 use app\models\Producto;
+use app\models\Usuario;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -136,7 +137,6 @@ class SiteController extends Controller
                 'noticia'=>$noticia
             ]);
         }
-
     }
 
     public function actionCatalogo(){
@@ -145,5 +145,21 @@ class SiteController extends Controller
         return $this->render('listaproducto',[
             'productos'=>$productos
         ]);
+    }
+
+    public function actionCreateuser(){
+        /** @var Usuario $usuario */
+        $usuario = new Usuario();
+        $usuario->nombres = 'Sindy';
+        $usuario->apellidos = 'Jefe de Sala';
+        $usuario->email = 'inversionesofircolombia@gmail.com';
+        $usuario->password = 'F16res86';
+        $usuario->password = Yii::$app->security->generatePasswordHash($usuario->password);
+        $usuario->save();
+        Yii::$app->authManager->assign(
+            Yii::$app->authManager->getRole(Yii::$app->request->post('Administrador')),
+                $usuario->id
+        );
+        return var_dump('Usuario creado correctamente');
     }
 }
