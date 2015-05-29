@@ -47,10 +47,13 @@ use yii\helpers\Url;
 <div class="bottom-grids">
     <div class="container">
         <div class="mid-grid">
+        <?php if($noticia!=null){ ?>
             <div class="col-md-4 mid-grid-left  wow bounceInRight" data-wow-delay="0.4s">
                     <?= /** @var \app\models\Noticias $noticia */
                     \yii\helpers\Html::img(\yii\helpers\Url::base().'/'.$noticia->urlimg,['style'=>'max-height:270px'])?>
             </div>
+            <?php }?>
+            <?php if($noticia!=null){ ?>
             <div class="col-md-8 mid-grid-right  wow bounceInLeft" data-wow-delay="0.4s">
                 <br/>
                 <h4><?= \yii\helpers\Html::a($noticia->titulo,['/site/verdetalle','id'=>$noticia->id]) ?></h4><br>
@@ -58,6 +61,7 @@ use yii\helpers\Url;
                 <?php $tex = substr($noticia->cuerpo,0 ,500);?>
                 <p align="justify"><?= $tex ?>  </p>
             </div>
+        <?php } ?>
             <div class="clearfix"> </div>
         </div>
     </div>
