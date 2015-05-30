@@ -1,3 +1,4 @@
+<?php $this->title = 'Politicas de calidad'; ?>
 <div class="container">
     <div class="best-seller" style="overflow: hidden;">
         <div class="biseller-info" style="overflow: hidden;">

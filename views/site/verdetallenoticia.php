@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+$this->title = 'Detalle de noticia';
 ?>
 <div class="container">
     <div class="best-seller" style="overflow: hidden;">

@@ -1,4 +1,5 @@
 <?php /** @var \app\models\Noticias $noticia */ ?>
+<?php $this->title = 'Noticias'; ?>
 <div class="container">
     <div class="team-history">
         <div class="best-seller" style="overflow: hidden;">

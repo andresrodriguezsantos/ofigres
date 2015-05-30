@@ -16,6 +16,8 @@
         });
 ") ?>
 <?php
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use app\assets\AppAsset;
 
@@ -37,41 +39,64 @@ AppAsset::register($this);
 <body>
 
 <?php $this->beginBody() ?>
-<div class="col-md-12" style="background-color: #0097cf">
-    <div class="top-header">
-        <nav class="top-nav wow bounceInDown" data - wow - delay="0.4s">
-            <span class="menu"> </span>
-            <ul class="nav nav-tabs">
-                <li class="active"><?= Html::a('Inicio',['/site/index']) ?></li>
-                <li><?= Html::a('Crear Noticias', ['noticias/index']) ?></li>
-                <li><?= Html::a('Admin Noticias',['noticias/admin']) ?></li>
-                <li><?= Html::a('Crear Productos',['producto/index']) ?></li>
-                <li><?= Html::a('Admin Productos',['producto/admin']) ?></li>
-                <li><?= Html::a('Usuario',['usuario/admin']) ?></li>
-                <li><?= Html::a('Salir',['/site/logout'],['data-method' => 'post']) ?></li>
-            </ul>
-        </nav>
-        <div class="clearfix"></div>
+
+<div class="wrap">
+    <?php
+    NavBar::begin([
+        'brandLabel' => 'Ofigres.com',
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'navbar navbar-default navbar-static-top',
+        ]
+    ]);
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right pull-right', 'style' => 'margin-top: 2%;'],
+        'items' => [
+
+
+            Yii::$app->user->can('Administrador') ?
+                ['label' => 'Crear Noticias', 'url' => ['noticias/index']] : '',
+            Yii::$app->user->can('Administrador') ?
+                ['label' => 'Admin Noticia', 'url' => ['noticias/admin']] : '',
+            Yii::$app->user->can('Administrador') ?
+                ['label' => 'Crear Productos', 'url' => ['producto/index']] : '',
+            Yii::$app->user->can('Administrador') ?
+                ['label' => 'Admin Productos', 'url' => ['producto/admin']] : '',
+            Yii::$app->user->can('Secretaria') ?
+                ['label' => 'Crear Noticias', 'url' => ['noticias/index']] : '',
+            Yii::$app->user->can('Secretaria') ?
+                ['label' => 'Admin Noticia', 'url' => ['noticias/admin']] : '',
+            Yii::$app->user->can('Secretaria') ?
+                ['label' => 'Crear Productos', 'url' => ['producto/index']] : '',
+            Yii::$app->user->can('Secretaria') ?
+                ['label' => 'Admin Productos', 'url' => ['producto/admin']] : '',
+            Yii::$app->user->can('Gerente') ?
+                ['label' => 'Usuario', 'url' => ['usuario/admin']] : '',
+            Yii::$app->user->isGuest ?
+                ['label' => 'Ingresar', 'url' => ['/site/login']] :
+                ['label' => 'Salir (' . Yii::$app->user->identity->nombres . ')',
+                    'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']],
+        ],
+    ]);
+    NavBar::end();
+    ?>
+    <div class="bottom-grids">
+        <div class="container">
+            <?php if (($msm = Yii::$app->session->getAllFlashes()) !== null): ?>
+                <?php foreach ($msm as $type => $menssage): ?>
+                    <div class="alert alert-<?php echo $type ?> fade in">
+                        <button data-dismiss="alert" class="close" type="button">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button><?php echo $menssage ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <div class="container">
+            <?= $content ?>
+        </div>
     </div>
-</div>
-<br/><br/><br/>
-<div class="bottom-grids">
-    <div class="container">
-        <?php if (($msm = Yii::$app->session->getAllFlashes()) !== null): ?>
-            <?php foreach ($msm as $type => $menssage): ?>
-                <div class="alert alert-<?php echo $type ?> fade in">
-                    <button data-dismiss="alert" class="close" type="button">
-                        <i class="glyphicon glyphicon-remove"></i>
-                    </button><?php echo $menssage ?>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
-    <div class="container">
-        <?= $content ?>
-    </div>
-</div>
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

@@ -6,6 +6,7 @@ use yii\captcha\Captcha;
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\ContactForm */
+$this->title = 'contacto';
 ?>
 <div class="contact-us">
     <div class="col-md-12" style="text-align: center">

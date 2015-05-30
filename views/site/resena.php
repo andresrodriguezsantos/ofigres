@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-
+$this->title = 'Reseña historica';
 ?>
 <div class="container">
     <div class="best-seller" style="overflow: hidden;">

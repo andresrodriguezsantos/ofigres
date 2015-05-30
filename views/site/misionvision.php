@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+$this->title = 'Misión y visión';
 ?>
 <div class="container">
     <div class="best-seller" style="overflow: hidden;">

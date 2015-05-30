@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
-
+$this->title = 'Ofigres.com';
 ?>
 <div class="col-lg-12">
      <div class="col-md-4 wow bounceInLeft" data-wow-delay="0.4s">

@@ -149,16 +149,16 @@ class SiteController extends Controller
 
     public function actionCreateuser(){
         /** @var Usuario $usuario */
-        $usuario = new Usuario();
+        /*$usuario = new Usuario();
         $usuario->nombres = 'Sindy';
         $usuario->apellidos = 'Jefe de Sala';
         $usuario->email = 'inversionesofircolombia@gmail.com';
         $usuario->password = 'F16res86';
         $usuario->password = Yii::$app->security->generatePasswordHash($usuario->password);
-        $usuario->save();
+        $usuario->save();*/
         Yii::$app->authManager->assign(
-            Yii::$app->authManager->getRole(Yii::$app->request->post('Administrador')),
-                $usuario->id
+            Yii::$app->authManager->getRole('Administrador'),
+                1
         );
         return var_dump('Usuario creado correctamente');
     }
